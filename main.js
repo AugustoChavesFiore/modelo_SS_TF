@@ -9,8 +9,8 @@ const leanrLinear= async()=>{
     const model = tf.sequential();
     model.add(tf.layers.dense({units: 1, inputShape: [1]}));
     model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
-    const xs = tf.tensor2d([-3, -2, -1, 0, 1, 2, 3, 4, 5, 6], [10, 1]);
-    const ys = tf.tensor2d([0, 2, 4, 6, 8, 10, 12, 14, 16, 18], [10, 1]);
+    const xs = tf.tensor2d([-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6], [13, 1]);
+    const ys = tf.tensor2d([-6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18], [13, 1]);
     await model.fit(xs, ys, {epochs: 500});
     return model;
 
